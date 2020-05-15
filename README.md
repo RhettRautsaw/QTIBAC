@@ -25,12 +25,12 @@
 3. `-a {fasta}`: annotated transcriptome fasta (*e.g.*, `-a {}_transcriptome_v1.fasta`)
 4. `-r {fastq}`: PEAR merged reads fastq (*e.g.*, `-r {}_pear.fastq`)
 5. **Choose option below**
-  * `-db {path}` & `-b {blastn/blastx}`: User specified blast database (with `makeblastdb` previously run) and the type of `blast` search (*e.g.*, `-db /path/to/swissprot -b blastx`)
-  * `-remote`: blast against the GenBank nr database instead (**Warning**: Much slower)
-6. `-o {string}`: name for output files
+    * `-db {path}` & `-b {blastn/blastx}`: User specified blast database (with `makeblastdb` previously run) and the type of `blast` search (*e.g.*, `-db /path/to/swissprot -b blastx`)
+    * `-remote`: blast against the GenBank nr database instead (**Warning**: Much slower)
  
 ## Optional Arguments
 
+* `-o {string}`: name for output files
 * `-c`: use `cd-hit` instead of `blast` when clustering to your transcriptome
 * `-p {integer}`: `blast` or `cd-hit` match percentage when comparing ORFs to transcriptome (default = 99%)
 * `-t {integer}`: number of processing threads (default = 8)
