@@ -1,13 +1,15 @@
 # QTIBAC
 **QMS-based Transcript Identification, Blast, Annotation, and Confirmation**
 
-**QTIBAC** is a wrapper script which uses `blast`, `cd-hit`, and [`ChimeraKiller`](https://github.com/masonaj157/ChimeraKiller) to cluster proteomically (quantitative mass spectrometry/qMS) identified ORFs to your transcriptome, blast them to a provided database (or to the NR database on Genbank), and remove chimeric ORFs. 
+**QTIBAC** is a wrapper script which uses `blast`, `cd-hit`, and [`ChimeraKiller`](https://github.com/masonaj157/ChimeraKiller) to cluster proteomically (quantitative mass spectrometry/qMS) identified ORFs to your transcriptome, blast them to a provided database (or to the NR database on Genbank), and remove chimeric ORFs.
 
-**QTIBAC** provides a new transcriptome with (1) proteomically confirmed transcripts in your transcriptome designated with \*\*\* and (2) non-matched proteomically identifed ORFs appended as 'Putative' novel transcripts. 
+**QTIBAC** provides a new transcriptome with (1) proteomically confirmed transcripts in your transcriptome designated with \*\*\* and (2) non-matched proteomically identifed ORFs appended as 'Putative' novel transcripts.
+
+![](QTIBAC_Flowchart.png)
 
 ## Assumptions
 
-1. You have used `emboss` to run `getorf -find 1 -minsize 90 -sequence {}_assembly.fasta -outseq {}_ORFs.pro` 
+1. You have used `emboss` to run `getorf -find 1 -minsize 90 -sequence {}_assembly.fasta -outseq {}_ORFs.pro`
 2. You have used `emboss` to run `getorf -find 3 -minsize 90 -sequence {}_assembly.fasta -outseq {}_ORFs.fasta`
 3. You have used `{}_ORFs.pro` as your input for qMS identification and quantification.
 
@@ -27,7 +29,7 @@
 5. **Choose option below**
     * `-db {path}` & `-b {blastn/blastx}`: User specified blast database (with `makeblastdb` previously run) and the type of `blast` search (*e.g.*, `-db /path/to/swissprot -b blastx`)
     * `-remote`: blast against the GenBank nr database instead (**Warning**: Much slower)
- 
+
 ## Optional Arguments
 
 * `-o {string}`: name for output files
@@ -76,7 +78,7 @@
 5. Fasta of QMS transcripts which remain after failing to match the annotated transcriptome
 6. Fasta of QMS transcripts which remain after removing chimeric sequences
 7. Fasta of QMS transcripts which remain after clustering clean sequences
-8. New annotated transcriptome with \*\*\* indicating which transcripts are proteomically confirmed and remaining orfs appended 
+8. New annotated transcriptome with \*\*\* indicating which transcripts are proteomically confirmed and remaining orfs appended
 
 ## Examples
 Blasting to local database and comparing to annotated transcriptome using cd-hit (note the -db -b -c flags)
@@ -84,10 +86,7 @@ Blasting to local database and comparing to annotated transcriptome using cd-hit
 QTIBAC.py -f Cline-CLP2629_ORFs.fasta -q Cline-CLP2629_Scaffold.pro -a Cline-CLP2629_transcriptome_v3.fasta -r Cline-CLP2629_M.assembled.fastq.gz -db /PATH/TO/SWISSprot -b blastx -c -o Cline-CLP2629 -p 99 -t 8
 ```
 
-Blasting to remote database and comparing to annotated transcriptome using blast (note the -remote flag and lack of -c flag) 
+Blasting to remote database and comparing to annotated transcriptome using blast (note the -remote flag and lack of -c flag)
 ```
 QTIBAC.py -f Cline-CLP2629_combined_ORFs.fasta -q Cline-CLP2629_QMS_DB.pro -a Cline-CLP2629_transcriptome_v3.fasta -r Cline-CLP2629_M.assembled.fastq.gz -remote -o Cline-CLP2629 -p 99 -t 8
  ```
- 
-
-  
