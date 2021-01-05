@@ -17,7 +17,7 @@
 
 ```
 conda create -n qtibac_env python=3.6 biopython blast cd-hit bwa samtools bedtools picard pandas matplotlib scipy pysam gatk4 pathos
-git clone https://github.com/reptilerhett/QTIBAC.git
+git clone https://github.com/RhettRautsaw/QTIBAC.git
 git clone https://github.com/masonaj157/ChimeraKiller.git
 echo 'export PATH=$PATH:/path/to/QTIBAC:/path/to/ChimeraKiller' >> ~/.bash_profile
 ```

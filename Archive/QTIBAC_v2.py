@@ -23,7 +23,7 @@ This script is designed to deal with proteomic annotation and confirmation. \n\n
 :::EXAMPLE::: \n\
 QTIBAC.py -f Cline-CLP2629_combined_ORFs.fasta -q Cline-CLP2629_QMS_DB.pro -a Cline-CLP2629_transcriptome_v3.fasta -o Cline-CLP2629 -db ~/Dropbox/bin/SWISSprot_2019-09-06/SWISSprot -b blastx -p 99\n\n\
 ::CITE:: \n\
-https://github.com/reptilerhett/Bioinformatic-Scripts\n\n')
+https://github.com/RhettRautsaw/Bioinformatic-Scripts\n\n')
 
 ###############################################
 

@@ -29,7 +29,7 @@ QTIBAC.py -f Cline-CLP2629_combined_ORFs.fasta -q Cline-CLP2629_QMS_DB.pro -a Cl
 Blasting to remote database and comparing to annotated transcriptome using blast (note the -remote flag and lack of -c flag) ::: \n\
 QTIBAC.py -f Cline-CLP2629_combined_ORFs.fasta -q Cline-CLP2629_QMS_DB.pro -a Cline-CLP2629_transcriptome_v3.fasta -r Cline-CLP2629_M.assembled.fastq.gz -remote -o Cline-CLP2629 -p 99 -t 8 \n\n\
 ::CITE:: \n\
-https://github.com/reptilerhett/Bioinformatic-Scripts\n\n')
+https://github.com/RhettRautsaw/Bioinformatic-Scripts\n\n')
 
 ###############################################
 
